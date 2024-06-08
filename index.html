@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayban Website Landing Page</title>
+  <link rel="stylesheet" href="styles_final.css">
+</head>
+
+<body>
+  <section class="sec">
+    <header>
+      <a href="#">
+        <img class="logo" src="rayban_logo.svg" alt="Rayban Logo">
+      </a>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">NEW ARRIVALS</a></li>
+        <li><a href="#">SUNGLASSES</a></li>
+        <li><a href="#">EYEGLASSES</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </header>
+
+    <div class="content">
+      <div class="textBox">
+        <h2>NEVER HIDE</h2>
+        <p>Courage, authenticity and timeless style are the core values of &emsp;<i>Ray-Ban,</i> a leader in
+          prescription and sun
+          eyewear for
+          generations since its establishment in 1937. Embodied by the iconic Aviator originally crafted for US military
+          pilots,
+          Ray-Ban has been at the forefront of cultural change, becoming a symbol of self-expression and worn by
+          celebrities and
+          public figures all around the world.
+        </p>
+        <a href="#">View all products</a>
+      </div>
+
+      <div class="imgBox">
+        <img class="rayban" src="Rayban-One.png" alt="Rayban Sunglasses">
+      </div>
+    </div>
+
+    <div id="dynamicText" class="dynamic-text">AVIATOR</div>
+
+    <ul class="thumb">
+      <li><img src="Rayban-One.png"
+          onclick="imgSlider('Rayban-One.png', 'AVIATOR'); changeBgColor('linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 59%, rgba(0,212,255,1) 100%)')"
+          alt="Rayban One"></li>
+      <li><img src="rayban-4.png"
+          onclick="imgSlider('rayban-4.png', 'CLUBMASTER'); changeBgColor('linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 46%, rgba(4,239,54,1) 100%)')"
+          alt="Rayban Four"></li>
+      <li><img src="Rayban-3.png"
+          onclick="imgSlider('Rayban-3.png', 'WAYFARER'); changeBgColor('linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 49%, rgba(253,253,253,1) 100%)')"
+          alt="Rayban Three"></li>
+    </ul>
+
+    <ul class="sci">
+      <li><a href="#"><img src="facebook.png" alt="Facebook"></a></li>
+      <li><a href="#"><img src="instagram.png" alt="Instagram"></a></li>
+      <li><a href="#"><img src="twitter.png" alt="Twitter"></a></li>
+    </ul>
+  </section>
+
+  <script type="text/javascript">
+    function imgSlider(image, text) {
+      const raybanImage = document.querySelector('.rayban');
+      const dynamicText = document.getElementById('dynamicText');
+
+      raybanImage.style.opacity = 0;
+      dynamicText.style.opacity = 0;
+
+      setTimeout(() => {
+        raybanImage.src = image;
+        dynamicText.textContent = text;
+        raybanImage.style.opacity = 1;
+        dynamicText.style.opacity = 1;
+      }, 300);
+    }
+
+    function changeBgColor(color) {
+      const sec = document.querySelector('.sec');
+      sec.style.background = color;
+    }
+  </script>
+</body>
+
+</html>
